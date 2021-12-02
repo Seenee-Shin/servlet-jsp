@@ -1,0 +1,34 @@
+package edu.kh.semi.wrapper;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
+
+public class EncryptWrapper extends HttpServletRequestWrapper{
+	//HttpServletRequestWrapper : 클라이언트의 요청을 감싸 가공하는 객체 
+	
+	//HttpServletRequestWrapper는 매개변수 1개의 생성자만 존재
+	public EncryptWrapper(HttpServletRequest request) {
+		super(request);
+		
+		
+		
+	}
+	
+	
+	@Override
+	public String getParameter(String name) {
+		//매개변수로 member가 넘어온 경우 암호화를 진행
+		// 아닌결루 원래 getParameter() 동작을 수행 
+		
+		String value = null;
+		
+		switch(name) {
+		case"memberPw" : break;
+		
+		default : value = super.getParameter(name);
+		}
+		
+		return value;
+	}
+}
+

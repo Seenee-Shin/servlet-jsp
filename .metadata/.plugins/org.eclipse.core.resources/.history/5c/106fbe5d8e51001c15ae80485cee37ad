@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>c:forEach 향상된 for문 결과</title>
+</head>
+<body>
+	EL을 이용하여 같은 name이 여러개인 Parameter 얻어오기
+	${param.lang} <br> 
+	${paramValues.lang } <br>
+	${paramValues.lang[0]}
+	${paramValues.lang[1]}
+	${paramValues.lang[2]}
+</body>
+</html>

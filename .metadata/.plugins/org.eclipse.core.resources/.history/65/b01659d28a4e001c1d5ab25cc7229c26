@@ -1,0 +1,19 @@
+package edu.kh.servlet.model.service;
+import static edu.kh.servlet.common.JDBCTemplate.*;
+
+import edu.kh.servlet.model.dao.MemberDAO;
+import edu.kh.servlet.vo.Member;
+
+public class MemberService {
+	private MemberDAO dao = new MemberDAO();
+
+	/** 회원가입
+	 * @param member
+	 * @return int result (1 = seccese) 
+	 * @throws Exception
+	 */
+	public int signUp(Member member) throws Exception{
+		int result =0; 
+		return result;
+	}
+}

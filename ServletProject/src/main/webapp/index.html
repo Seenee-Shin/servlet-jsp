@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servelt project test</title>
+</head>
+<body>
+  <h1>index.html은 메인페이지 역할</h1>
+
+  <hr>
+  <!-- 
+    form태그 : 내부에 작성된 input 태그의 값을 서버로 전달하는 역할
+    action 속성 : 값을 전닿라 서버 주소 작성 
+    method 속성 : 데이터 전달 방식
+      -get : 주소뒤에 input태그 값을 붙여서 전달 (데이터 직접 보임)
+      -post : http프로토콜 body에 값을 담아 전당 (데이터 직접 안보임)
+  -->
+  <form action="/ServletProject/example1.do" method="get">
+    <!-- input태그에 name속성 잊지말기 -->
+    이름 : <input type="text" name="inputName"> <br>
+    나이 : <input type="number" name="inputAge">
+    <button>제출</button>
+  </form>
+
+  <hr>
+  <form action="/ServletProject/ex2" method="get"> <br>
+    음식 : <input type="text" name="food" id="" required>
+    몇인분 : 
+    <select name="amount" id="">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select> <br>
+
+    요청사항 <br>
+    <textarea name="message" id="" cols="30" rows="3"></textarea>
+
+    <button>주문하기</button>
+  </form>
+
+  <hr>
+  <form action="/ServletProject/dindin" method="get">
+    택배 받을 주소 : <input type="text" name="address" required><br>
+    옵션 선택 
+    <select name="product" id="">
+      <option value="pen">볼펜</option>
+      <option value="mugcup">머그</option>
+      <option value="note">노트</option>
+    </select>
+
+    수량 선택
+    <select name="amount" id="">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    
+    <button>주문하기</button>
+
+  </form>
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+package edu.kh.semi.member.model.vo;
+
+public class Member {
+	
+	String memberId = s
+
+}

@@ -1,0 +1,22 @@
+package edu.kh.jsp.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/")
+public class OrderServlet extends HttpServlet {
+	// Servlet : 웹 서비스를 위한 자바 클래스 
+	// 요청에 따른 응답 화면을 만드는 클래스 
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// get방식 요청 처리 메소드 
+		// HttpServletrequest : 요청 (클라이언트 -> 서버)
+		// HttpServletresponse : 응답(서버 -> 클라이언트 )
+	}
+}

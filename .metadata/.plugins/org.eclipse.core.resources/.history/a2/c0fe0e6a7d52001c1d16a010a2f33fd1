@@ -1,0 +1,7 @@
+package edu.kh.semi.member.model.vo;
+
+//VO : Value Object
+public class Member {
+	private int memberNo;
+	
+}

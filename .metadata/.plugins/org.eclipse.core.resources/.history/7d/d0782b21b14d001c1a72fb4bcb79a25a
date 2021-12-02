@@ -1,0 +1,20 @@
+package edu.kh.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestServlet1 extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//HttpServletRequest req : 요청 괸련 데이터, 정보를 가지고 있는 객체 
+		// Parameter: 클라이언트 요청 시 전달 받은 값
+		
+		String inputName = req.getParameter("inputName");
+		//-> 요청 시 전달받은 값 중 name 속성 값이 "inputName"인 input 태그릐 value를 얻어옴
+	}
+}

@@ -1,0 +1,5 @@
+package edu.kh.servlet.common;
+
+public class JDBCTemplete {
+
+}

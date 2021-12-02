@@ -1,0 +1,66 @@
+package edu.kh.semi.member.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import edu.kh.semi.member.model.service.MemberService;
+import edu.kh.semi.member.model.vo.Member;
+
+//MVC(Model View Controller) model 2 Pattern
+// back&front end를 구분해서 협업이 원할하게 하는 디자인 패턴 
+
+// Model : 비지니스 로직 (백엔드 코드)
+// View : 눈에 보이는 화면 jsp, css, html, javascript (프론트 엔드 )
+// controller : 클라이언트의 요청을 받아 요청에 따라 알맞은 서비스 결과에 따라 응답화면 제어
+
+@WebServlet("/member/login")
+public class LoginServlet extends HttpServlet {
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		req.setCharacterEncoding("UTF-8");
+		
+		String memberId = req.getParameter("memberId");
+		String memberPw = req.getParameter("memberPw");
+	
+		//파라미터확인
+		System.out.println(memberId);
+		System.out.println(memberPw);
+		
+		//아이디, 비밀번호를 DB로 전달하여 일치하는 회원 정보 조회 Service 호출
+		try {
+			//1) MemberService 객체 생성
+			MemberService service = new MemberService();
+			
+			//2)로그인 Service 메소드 호출, 결과반환 => 멤버객체(100: 정상 , 102 :정지) || null || 예외
+			Member loginMember = service.login(memberId,memberPw);
+			
+			//로그인 정보 O 
+			if(loginMember != null) {
+				
+				//로그인 관련 처리 시 Session 객체를 이용
+				HttpSession session = req.getSession();
+				
+				
+				// 정상 , 정지 구분
+				if(loginMember.getStatusCode() == 100) { //정상
+					//로그인 성공 - 로그아웃 or 창을 닫기 전까지 유지(session에 login정보 추가)
+					
+				}else { //정지
+					
+				}
+			}else {
+				
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+}

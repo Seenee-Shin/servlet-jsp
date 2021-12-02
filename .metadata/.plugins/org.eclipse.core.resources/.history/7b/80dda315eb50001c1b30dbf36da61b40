@@ -1,0 +1,9 @@
+package edu.kh.jsp.controller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/EL/scope")
+public class ScopeServlet extends HttpServlet{
+
+}

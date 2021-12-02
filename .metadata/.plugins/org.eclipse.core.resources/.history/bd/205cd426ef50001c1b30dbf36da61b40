@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<pre>
+	requestScope: EL에서 request 범위만을 접근할때 사용 
+	sessionScope: EL에서 request 범위만을 접근할때 사용 
+	applicationScope: EL에서 applicaition 범위만을 접근할때 사용 
+	
+	
+	request - msg : ${requestScope.msg}
+	request - reqValue : ${requestScope.reqValue}
+	session - msg : ${sessionScope.msg}
+	session - sessionValue : ${sessionScope.sessionValue}
+	application - msg : ${applicationScope.msg }
+	application - appValue : ${appValue.msg }
+	</pre>
+</body>
+</html>

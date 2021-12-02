@@ -1,0 +1,20 @@
+package edu.kh.servlet.vo;
+
+public class Member {
+	private String memberId;
+	private String memberPw;
+	private String memberName;
+	private String memberEmail;
+	
+	public Member() {}
+	
+	public Member(String memberId, String memberPw, String memberName, String memberEmail) {
+		super();
+		this.memberId = memberId;
+		this.memberPw = memberPw;
+		this.memberName = memberName;
+		this.memberEmail = memberEmail;
+	}
+	
+	
+}

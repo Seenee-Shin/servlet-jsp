@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servlet test 2</title>
+</head>
+<body>
+  <h3>1.checkbox or name속성 값이 같은 input태그 값 서버 전달 </h3>
+  <form action="/ServletProject2/test1" method="get">
+    이름 : <input type="text" name="inputName"> <br>
+    성별 
+    <!-- radio btn은 선택 값이 1 이기 떄문에 선택된 값만 서버로 제출  -->
+    남 <input type="radio" name="gender" value="남">
+    여 <input type="radio" name="gender" value="여">
+    <br>
+
+    취미
+    <!-- checkbox는 선택값이 여러개가 될 수 있음
+        name속성이 같은 여러개가 input이 서버로 전달되는 경우 배열로 전달
+    -->
+    축구 <input type="checkbox" name="hobby" value="축구">
+    농구 <input type="checkbox" name="hobby" value="농구">
+    야구 <input type="checkbox" name="hobby" value="야구">
+
+    <br>
+    해시태그 : 
+    <input type="text" name="hashtag">
+    <input type="text" name="hashtag">
+    <input type="text" name="hashtag">
+
+    <button>제출</button>
+
+
+  </form>
+</body>
+</html>

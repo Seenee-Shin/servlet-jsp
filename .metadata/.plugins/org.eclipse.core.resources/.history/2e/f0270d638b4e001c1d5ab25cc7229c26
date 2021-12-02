@@ -1,0 +1,38 @@
+package edu.kh.servlet.model.dao;
+import static edu.kh.servlet.common.JDBCTemplate.*;
+
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Properties;
+
+import edu.kh.servlet.vo.Member;
+
+public class MemberDAO {
+
+	private Statement stmt;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+	private Properties prop;
+	
+	public MemberDAO() {
+		try {
+	         prop = new Properties();
+	         
+	         String filePath = MemberDAO.class.getResource("/edu/kh/servlet/sql/member-query.xml").getPath();       
+	      
+	         prop.loadFromXML( new FileInputStream(filePath) );
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public int signUP(Connection conn, Member member) {
+		
+		return 0;
+	}
+	
+}

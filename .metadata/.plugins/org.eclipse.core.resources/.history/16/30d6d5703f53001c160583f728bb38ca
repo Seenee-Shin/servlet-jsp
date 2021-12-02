@@ -1,0 +1,13 @@
+package edu.kh.semi.member.controller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/member/signup")
+public class SignUpServlet extends HttpServlet{
+	//데이터 전송 박싱
+	// GET : 조회
+	// POST :
+	// PUT :
+	// DELETE : 
+}
