@@ -12,9 +12,17 @@
 	<section class="py-5">
 	  <div class="container">
 	    <h1>${today}</h1>
-	    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+	    <p class="lead">로그인 회원정보</p>
+	  	<p>
+	  		ID : ${loginMember.memberId} <br>
+	  		Name : ${loginMember.memberName} <br>
+	  		Phone : ${loginMember.memberPhone} <br>
+	  		E-mail: ${loginMember.memberEmail} <br>
+	  		Address: ${loginMember.memberAddress} <br>
+	  		
+	  	</p>
 	  </div>
+	  
 	</section>
 	
 	<section class="py-5">

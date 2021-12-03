@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/servlet server-config" deployDir="wtpwebapps" hostname="localhost" id="servlet server" name="servlet server" runtime-id="Apache Tomcat v8.5" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="3">
-    <list key="modules" value0="ServletProject3::org.eclipse.jst.jee.server:ServletProject3::jst.web::3.1"/>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/servlet server-config" deployDir="wtpwebapps" hostname="localhost" id="servlet server" name="servlet server" runtime-id="Apache Tomcat v8.5" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="4">
+    <list key="modules" value0="ServletProject3::org.eclipse.jst.jee.server:ServletProject3::jst.web::3.1" value1="semi::org.eclipse.jst.jee.server:semi::jst.web::3.1"/>
   </server>
   <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/jsp server-config" deployDir="wtpwebapps" hostname="localhost" id="jsp server" name="jsp server" runtime-id="Apache Tomcat v8.5" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="1">
     <list key="modules" value0="JSPProject::org.eclipse.jst.jee.server:JSPProject::jst.web::3.1"/>
