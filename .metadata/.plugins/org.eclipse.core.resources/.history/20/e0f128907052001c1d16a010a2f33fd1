@@ -1,7 +1,0 @@
-package edu.kh.semi.member.model.service;
-
-import static edu.kh.semi.common.JDBCTemplate.*;
-
-public class MemberService {
-
-}

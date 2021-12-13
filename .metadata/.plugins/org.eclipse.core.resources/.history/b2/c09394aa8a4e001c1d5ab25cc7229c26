@@ -1,8 +1,0 @@
-package edu.kh.servlet.model.service;
-import static edu.kh.servlet.common.JDBCTemplate.*;
-
-import edu.kh.servlet.model.dao.MemberDAO;
-
-public class MemberService {
-	private MemberDAO dao = new MemberDAO();
-}

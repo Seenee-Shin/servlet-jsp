@@ -1,6 +1,0 @@
-package edu.kh.servlet.model.service;
-import static edu.kh.servlet.common.JDBCTemplate.*;
-
-public class MemberService {
-
-}

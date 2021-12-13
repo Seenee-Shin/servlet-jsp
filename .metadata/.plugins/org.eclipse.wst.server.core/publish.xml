@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <publish-info>
   <server id="servlet server" path="publish0.dat"/>
-  <server id="jsp server" path="publish1.dat"/>
+  <server id="practice server" path="publish3.dat"/>
   <server id="semi server" path="publish2.dat"/>
+  <server id="jsp server" path="publish1.dat"/>
 </publish-info>

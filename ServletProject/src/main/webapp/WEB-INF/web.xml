@@ -12,7 +12,7 @@
   </welcome-file-list>
   
   <!-- Servlet 등록
-  <servlet-class>의 주소를 Example1이라고 명몀 
+  <servlet-class>의 주소를 Example1이라고 명명
   	servlet-name이 class보다 상위 순위에 위치해있어야한다-->
   <servlet>
   	<servlet-name>Example1</servlet-name>

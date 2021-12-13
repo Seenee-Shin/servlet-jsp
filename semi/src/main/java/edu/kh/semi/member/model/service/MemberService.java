@@ -3,6 +3,7 @@ package edu.kh.semi.member.model.service;
 import static edu.kh.semi.common.JDBCTemplate.*;
 
 import java.sql.Connection;
+import java.util.Map;
 
 import edu.kh.semi.member.model.dao.MemberDAO;
 import edu.kh.semi.member.model.vo.Member;
@@ -48,6 +49,94 @@ public class MemberService {
 		}else {
 			rollback(conn);
 		}
+		return result;
+	}
+
+	/** 아이디 중복확인
+	 * @param inputId
+	 * @return int result 
+	 */
+	public int idDupCheck(String inputId) throws Exception {
+		Connection conn = getConnection();
+		
+		int result = dao.idDupCheck(inputId , conn);
+		
+		close(conn);
+		return result;
+	}
+
+	public int emailDupCheck(String inputEmail) throws Exception{
+		Connection conn = getConnection();
+		
+		int result = dao.emailDupCheck(inputEmail, conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	public Member idSearch(String inputId) throws Exception {
+		Connection conn = getConnection();
+		
+		Member member = new MemberDAO().idSearch(conn, inputId);
+		
+		close(conn);
+		
+		return member;
+	}
+	
+
+	public int update(Member member) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = new MemberDAO().updateDAO(member,conn);
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		return result;
+	}
+
+	public int updatePw(String currentPw, String newPw1, int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = new MemberDAO().updatePw(conn,currentPw,memberNo,newPw1);
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		return result;
+	}
+
+	/** 회원 탈퇴
+	 * @param map
+	 * @return result 
+	 * @throws Exception
+	 */
+	public int secession(Map<String, String> map) throws Exception {
+		Connection conn = getConnection();
+		
+		int result = dao.sececcion(map, conn);
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		
 		return result;
 	}
 	

@@ -128,7 +128,7 @@
 					<!-- 이메일 -->
 					<div class="row mb-3 form-row">
 						<div class="col-md-3">
-							<label for="email"> Email</label>
+							<label for="email"> <span class="required"></span>Email</label>
 						</div>
 						<div class="col-md-6">
 							<input type="email" class="form-control" id="email" name="email" autocomplete="off" required>
@@ -200,6 +200,8 @@
 		    $("#postcodify_search_button").postcodifyPopUp();
 		});
 	</script>
+	
+	<script src="${contextPath}/resources/js/member.js"></script>
 	
 </body>
 </html>

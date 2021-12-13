@@ -27,7 +27,7 @@
 		<div class="container">
 		
 			<!-- 좌상단 로고 -->
-			<a class="navbar-brand" href="#">Semi Project</a>
+			<a class="navbar-brand" href="${contextPath}">Semi Project</a>
 			
 			<!-- 화면 크기가 작아진 경우 나타나는 햄버거 버튼(반응형) -->
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,7 @@
 						<c:otherwise>
 							<!-- 로그인 후 -->
 							
-							<li class="nav-item active"><a class="nav-link"  href="#">${sessionScope.loginMember.memberName}</a></li>
+							<li class="nav-item active"><a class="nav-link"  href="${contextPath}/member/myPage">${sessionScope.loginMember.memberName}</a></li>
 							<li class="nav-item active"><a class="nav-link"  href="${contextPath}/member/logout">Logout</a></li>
 							<!-- a태그는 모두 get방식 -->
 						</c:otherwise>

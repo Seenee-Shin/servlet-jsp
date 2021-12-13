@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Map;
 import java.util.Properties;
 
 import edu.kh.semi.member.model.vo.Member;
@@ -122,7 +123,145 @@ public class MemberDAO {
 		
 		return result;
 	}
-	 
-	
-	 
+
+
+	public int idDupCheck(String inputId, Connection conn) throws Exception{
+		int result = 0; 
+		try {
+			String sql = prop.getProperty("idDupCheck");
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1,inputId);
+
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+
+	public int emailDupCheck(String inputEmail, Connection conn) throws Exception{
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("emailDupCheck");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,inputEmail);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+
+	public Member idSearch(Connection conn, String inputId) throws Exception{
+		Member member = null;
+		
+		try {
+			String sql = prop.getProperty("idSearch");
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, inputId);
+			
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				member = new Member();
+				
+				member.setMemberId(inputId);
+				member.setMemberName(rs.getString("MEMBER_NM"));
+				member.setMemberPhone(rs.getString("MEMBER_PHONE"));
+				member.setMemberEmail(rs.getString("MEMBER_EMAIL"));
+				member.setMemberAddress(rs.getString("MEMBER_ADDR"));
+				
+				
+			}
+		}finally {
+			close(rs);
+			close(pstmt);
+			
+		}
+		return member;
+	}
+
+
+	public int updateDAO(Member member, Connection conn) throws Exception {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("update");
+			
+			pstmt= conn.prepareStatement(sql);
+			pstmt.setString(1, member.getMemberPhone());
+			pstmt.setString(2, member.getMemberEmail());
+			pstmt.setString(3, member.getMemberAddress());
+			pstmt.setInt(4, member.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+
+
+	public int updatePw(Connection conn, String currentPw, int memberNo, String newPw1) throws Exception {
+		int result = 0;
+		
+		try { 
+			String sql = prop.getProperty("updatePw");
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, newPw1);
+			pstmt.setInt(2, memberNo);
+			pstmt.setString(3, currentPw);
+			
+			result =pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+
+
+	/** 회원 탈퇴
+	 * @param map
+	 * @param conn
+	 * @return result
+	 * @throws Exception
+	 */
+	public int sececcion(Map<String, String> map, Connection conn) throws Exception {
+		int result =0;
+		
+		try {
+			String sql = prop.getProperty("secession");
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, map.get("memberNo") ); //db는 숫자로만 이루어진 문자열은 자동적으로 NUMBER 자료형으로 인식 (int형 파싱 불필요)
+			pstmt.setString(2, map.get("currentPw"));
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
 }

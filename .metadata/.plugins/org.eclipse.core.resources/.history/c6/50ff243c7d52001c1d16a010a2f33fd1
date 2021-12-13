@@ -1,7 +1,0 @@
-package edu.kh.semi.member.model.vo;
-
-//VO : Value Object
-public class Member {
-	
-
-}

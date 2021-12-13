@@ -2,4 +2,5 @@
 <modules>
   <module moduleId="org.eclipse.jst.jee.server:JSPProject" serverId="jsp server"/>
   <module moduleId="org.eclipse.jst.jee.server:semi" serverId="semi server"/>
+  <module moduleId="org.eclipse.jst.jee.server:practice" serverId="practice server"/>
 </modules>

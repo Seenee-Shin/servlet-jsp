@@ -1,9 +1,0 @@
-package edu.kh.servlet.controller;
-
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-
-@WebServlet("/jdbc/signUp")
-public class SignUp2Servlet extends HttpServlet{
-	
-}

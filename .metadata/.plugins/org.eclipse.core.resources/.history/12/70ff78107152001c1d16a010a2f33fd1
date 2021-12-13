@@ -1,8 +1,0 @@
-package edu.kh.semi.member.model.dao;
-import static edu.kh.semi.common.JDBCTemplate.*;
-
-//DAO : Datbase Access Object
-
-public class MemberDAO {
-
-}
